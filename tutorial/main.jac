@@ -1,30 +1,22 @@
-node plain: has number;
-
-## defining the graph
-graph example {
-    has anchor head;
-    spawn {
-        n=[];
-        for i=0 to i<7 by i+=1 {
-            n.l::append(spawn node::plain(number=i+1));
-        }
-
-        n[0] --> n[1] --> n[2];
-        n[1] --> n[3];
-        n[0] --> n[4] --> n[5];
-        n[4] --> n[6];
-        head=n[0];
-        }
+node city{
+    has name;
+    can set_name{ #also can use "with activity"
+        name = "c1";
+        std.out("Setting city name:", here.context);
     }
+}
 
-#init walker traversing
-walker init {
-    root {
-        start = spawn here ++> graph::example;
+walker build_example{
+    node1 = spawn here ++> node::city;
+}
+
+walker init{
+    root{
+        spawn here walker::build_example;
         take-->;
-        }
-    plain {
-        std.out(here.number);
-        take-->;
+    }
+    city{
+        here::set_name;
+        std.out(here.name);
     }
 }
