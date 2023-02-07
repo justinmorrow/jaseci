@@ -194,14 +194,19 @@ At this point, Jasei has registered our code and we are ready to run walkers!
 
 Run the following command:
 
-`walker run -name create_fam`
+`walker run create_fam`
 
 You should see the following output:
 
 ```
-walker run -name create_fam
+jaseci > walker run create_fam
 I didn't do any of the hard work.
-[]
+{
+  "success": true,
+  "report": [],
+  "final_node": "urn:uuid:26fd8dbd-4f0a-4a40-8509-17734f54fb13",
+  "yielded": false
+}
 ```
 
 But how do we visualize that the graph produced by the program is right? If you've guessed it, we can use the Jaseci dot feature to take a look at our graph!!
