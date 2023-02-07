@@ -2,7 +2,7 @@
 
 ## Basic action example
 
-Jaseci has set of inbuilt actions. Also you can load and unload actions in `jsctl` shell. to see the available actions in jaseci session try running `actions list`. Here are two basic example of jaseci `date` actions.
+Jaseci has set of inbuilt actions. Also you can load and unload actions in `jsctl` shell. To see the available actions in a jaseci session try running `actions list`. Here are two basic example of jaseci `date` actions.
 
 **Example 1:**
 

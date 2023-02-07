@@ -7,4 +7,4 @@ packaged up as a Jaseci action library.
 
 > **Note**
 >
-> This action interface is the abstraction that allows Jaseci to do it's sophisticated serverless inter-machine optimizations, auto-scaling, auto-componentization etc.
+> This action interface is the abstraction that allows Jaseci to do its sophisticated serverless inter-machine optimizations, auto-scaling, auto-componentization etc.
