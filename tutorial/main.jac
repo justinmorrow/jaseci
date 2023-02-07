@@ -1,20 +1,29 @@
 node person {
     has name;
-    has birthday;
+    has byear;
+
+    #this sets the birth year from the setter
+    can date.quantize_to_year::visitor.year::>byear with setter entry;
+
+    #this executes upon exit of the walker from node
+    can std.out::byear," from ", visitor.info:: with exit;
+
 }
 
 walker init {
-    can date.quantize_to_year;
 
+    #collect the current time
+    has year=std.time_now();
     root {
-        person1 = spawn here ++> node::person(name="Josh", birthday="1995-05-20");
-        person2 = spawn here ++> node::person(name="Joe", birthday="1998-04-23");
-        person3 = spawn here ++> node::person(name="Jack", birthday="1997-03-12");
-        take -->;
+        person1 = spawn here ++> node::person(name="Josh", byear="1992-01-01");
+        take --> ;
     }
 
     person {
-        birthyear = date.quantize_to_year(here.birthday);
-        std.out(here.name," Birthdate Quantized to year ",birthyear);
-        }
+        spawn here walker::setter;
+    }
 }
+
+walker setter {
+    has year="1995-01-01";
+    }
