@@ -159,32 +159,30 @@ Don't worry if that looks confusing. As you learn the Jac language, this will be
 
 3. Open the jaseci shell by typing `jsctl`
 4. Run the following command to register a sentinel:
-   `sentinel register -name fam -code fam.jac -set_active true`
+   `sentinel register -name fam -set_active true fam.jac`
 
 You should see the following output:
 
 ```
-jaseci > sentinel register -name fam -code fam.jac -set_active true
-2022-03-21 13:56:29,443 - INFO - compile_jac: fam: Processing Jac code...
-2022-03-21 13:56:29,558 - INFO - register: fam: Successfully registered code
+jaseci > sentinel register -name fam -set_active true fam.jac
 [
-{
+  {
     "version": null,
     "name": "fam",
     "kind": "generic",
-    "jid": "urn:uuid:04385141-7d65-4467-bf51-d251bb9e5a84",
-    "j_timestamp": "2022-03-21T17:56:29.443318",
-    "j_type": "sentinel"
-},
-{
-    "context": {},
-    "anchor": null,
+    "jid": "urn:uuid:3f4af2d5-bc96-4322-a2c5-13037c790a64",
+    "j_timestamp": "2023-02-07T21:04:45.053777",
+    "j_type": "sentinel",
+    "code_sig": "d039981a0be39faa2fc16a38a96ffb06"
+  },
+  {
     "name": "root",
-    "kind": "generic",
-    "jid": "urn:uuid:9df56101-f831-4791-8326-ca6657b4b23c",
-    "j_timestamp": "2022-03-21T17:56:29.443427",
-    "j_type": "graph"
-}
+    "kind": "node",
+    "jid": "urn:uuid:5cd172a3-b711-4af1-ab36-05b23aafb2eb",
+    "j_timestamp": "2023-02-07T21:04:45.054002",
+    "j_type": "graph",
+    "context": {}
+  }
 ]
 ```
 
