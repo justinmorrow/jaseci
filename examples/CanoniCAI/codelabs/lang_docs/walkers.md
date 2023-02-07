@@ -5,22 +5,22 @@ semantics of this abstraction is unlike any that has existed in any programming 
 before.
 
 In a nutshell, a walker is a unit of execution that retains state (its local scope) as it travels
-over a graphs. Walkers *walk* from node to node in the graph and executing its body.
+over a graph. Walkers *walk* from node to node in the graph and executing its body.
 The walker’s body is specified with an opening and closing braces ( `{` `}` ) and is executed to
 completion on each node it lands on. In this sense a walker iterates while spooling through a
-sequence of nodes that it ‘takes’ using the take keyword. We call each of these iterations
-node-bound iterations.
+sequence of nodes that it ‘takes’ using the `take` keyword. We call each of these iterations
+node-bound iteration.
 
 Variables declared in a walker’s body takes two forms: its context variables, those that
 retain state as it travels from node to node in a graph, and its local variables, those that are
-reinitialized for each node-bound iterations.
+reinitialized for each node-bound iteration.
 
 Walkers present a new way of thinking about programmatic execution distinct from the
-near-ubiquitous function based asbtraction in other languages. Instead of a functions scope
-being temporally pushed onto an ever increasing stack as functions call other functions.
-Scopes can be spacially laid out on a graph and walkers can hop around the graph taking its
+near-ubiquitous function based abstraction in other languages. Instead of a function's scope
+being temporally pushed onto an ever increasing stack as functions call other functions,
+scopes can be spacially laid out on a graph and walkers can hop around the graph taking its
 scope with it. A key difference in this model is in its introduction of data spacial problem
-solving. In the former function-based model scopes become unaccessible upon the sub-call of
+solving. In the former function-based model, scopes become unaccessible upon the sub-call of
 a function until that function returns. In contrast, walkers can access any scope at any time
 in a modular way.
 

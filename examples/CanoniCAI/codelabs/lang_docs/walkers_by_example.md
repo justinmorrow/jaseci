@@ -1,6 +1,6 @@
 # Understanding Walkers by Example
 
-When we run a jac code, by default it's exucuting the `init` walker. Basically the `walker init` works as the main method in other programming language. save following code as `main.jac` and run the code in `jsctl` shell with `jac run main.jac`
+When we run a jac code, by default it's executing the `init` walker. Basically the `walker init` works as the main method in other programming language. save following code as `main.jac` and run the code in `jsctl` shell with `jac run main.jac`
 
 **Example 1:**
 ```jac
@@ -16,7 +16,7 @@ walker init{
 ```
 As you can see, this code has executed the `init` walker. Now let's create another walker;
 
-**Output 2:**
+**Example 2:**
 ```jac
 walker second_walker{
     std.out("This is from second walker \n");
@@ -41,20 +41,23 @@ The statements from `second walker` and `init` are printed in the jac shell, and
 
 ## Walkers Navigating Graphs Examples
 
-As mentioned earlier the walkers can traverse(walk) through the nodes of the graph in breadth first search (BFS) or depth first search(DFS) approaches.
+As mentioned earlier the walkers can traverse(walk) through the nodes of the graph in breadth first search (BFS) or depth first search (DFS) approaches.
 
 > **Note**
 >
 > BFS is a traversal approach in which begins from root node and walk through all nodes on the same level before moving on to the next level. DFS is also a traversal approach in which the traverse begins at the root node and proceeds through the nodes as far as possible until we reach the node with no unvisited nearby nodes.
 
-We are creating the following graph to demostrate traversing of walkers in comming sections;
+We are creating the following graph to demonstrate traversing of walkers in coming sections;
 
- <div style="text-align:center"><img style="align:center" src="images/traverse_graph_example.PNG" /> <b>Example Graph - Navigating </b></div>
+  <div style="text-align:center">
+    <img style="align:center" src="images/traverse_graph_example.PNG" /></br>
+    <b>Example Graph - Navigating </b>
+  </div>
 
 <p>
 </p>
 
-Jaseci introduces the handy command called "take" to instruct walker to navigate through nodes. See how that works in following example;
+Jaseci introduces the handy command called "take" to instruct walker to navigate through nodes. See how that works in the following example;
 
 **Example 3:**
 ```jac
@@ -318,9 +321,9 @@ person {
 The majic line in the above code is the `for i in -[friend]->: destroy i;` it instruct walker to remove all the nodes connected by friend edges. try playing with the code by removing and adding `destroy` command.
 
 
-Graph before `destroy` command            |  Graph after `destroy` command
-:-------------------------:|:-------------------------:
-![Example Graph - Deleting 1](images/delete_example_before.png)  |  ![Example Graph 2 - Deleting 2](images/delete_example_after.png)
+|                 Graph before `destroy` command                  |                  Graph after `destroy` command                   |
+| :-------------------------------------------------------------: | :--------------------------------------------------------------: |
+| ![Example Graph - Deleting 1](images/delete_example_before.png) | ![Example Graph 2 - Deleting 2](images/delete_example_after.png) |
 
 
 > **Note**
