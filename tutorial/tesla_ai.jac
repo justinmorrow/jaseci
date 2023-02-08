@@ -1,3 +1,4 @@
+import {*} with "./ai_model.jac";
 import {*} with "./dialogue.jac";
 import {*} with "./faq.jac";
 

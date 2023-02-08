@@ -35,3 +35,4 @@ node_modules
 # Docs
 mdbook/
 
+tutorial/**/*.bin
